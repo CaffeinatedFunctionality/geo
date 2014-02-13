@@ -18,6 +18,8 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'devise'
 gem 'foundation'
 gem 'protected_attributes'
+gem 'geocoder'
+gem 'gmaps4rails'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby

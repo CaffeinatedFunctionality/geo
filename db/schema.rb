@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140212164504) do
+ActiveRecord::Schema.define(version: 20140212232531) do
 
   create_table "truckusers", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -34,6 +34,12 @@ ActiveRecord::Schema.define(version: 20140212164504) do
     t.string   "truckname"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "profile_id"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.string   "category"
+    t.string   "description"
+    t.datetime "datetime"
   end
 
   add_index "truckusers", ["email"], name: "index_truckusers_on_email", unique: true

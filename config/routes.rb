@@ -1,6 +1,14 @@
 Foodtruckies2::Application.routes.draw do
   get "profiles/show"
   devise_for :truckusers
+
+  devise_scope :truckusers do
+    get '/register', to: 'devise/registrations#new', as: :register
+    get '/login', to: 'devise/sessions#new', as: :login
+    get '/logout', to: 'devise/sessions#destroy', as: :logout
+  end
+
+  get '/:profile_id', to: 'profiles#show'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -15,6 +23,7 @@ Foodtruckies2::Application.routes.draw do
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
+
 
   # Example resource route with options:
   #   resources :products do
