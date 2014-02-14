@@ -20,6 +20,9 @@ gem 'foundation'
 gem 'protected_attributes'
 gem 'geocoder'
 gem 'gmaps4rails'
+gem 'paperclip'
+gem 'sms_fu'
+gem 'pony'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby

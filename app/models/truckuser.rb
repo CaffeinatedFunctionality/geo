@@ -4,7 +4,10 @@ class Truckuser < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  attr_accessible :city, :email, :password, :password_confirmation, :remember_me, :truckname, :state, :zipcode, :ownerfirstname, :ownerlastname, :address, :datetime, :category, :description, :profile_id
+  attr_accessible :avatar, :city, :email, :password, :password_confirmation, :remember_me, :truckname, :state, :zipcode, :ownerfirstname, :ownerlastname, :address, :datetime, :category, :description, :profile_id
+
+  has_attached_file :avatar, :styles => { :small => "200x200", :semismall => "250x250", :medium => "300x300>", :large => "400x400", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
+  validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 
   before_save :create_unique_profile_id
 

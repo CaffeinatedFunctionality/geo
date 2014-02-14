@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140212232531) do
+ActiveRecord::Schema.define(version: 20140214141909) do
 
   create_table "truckusers", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -40,6 +40,10 @@ ActiveRecord::Schema.define(version: 20140212232531) do
     t.string   "category"
     t.string   "description"
     t.datetime "datetime"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   add_index "truckusers", ["email"], name: "index_truckusers_on_email", unique: true

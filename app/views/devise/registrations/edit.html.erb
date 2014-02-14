@@ -11,10 +11,12 @@
   <% end %>
 
   <div><%= f.label :truckname %><br />
-  <%= f.text_field :truckname %></div>
+  <%= f.text_field :truckname, :autofocus => true %></div>
+
+  <%= f.file_field :avatar %>
 
   <div><%= f.label :ownerfirstname %><br />
-  <%= f.text_field :ownerfirstname %></div>
+  <%= f.text_field :ownerfirstname %> true %></div>
 
   <div><%= f.label :ownerlastname %><br />
   <%= f.text_field :ownerlastname %></div>

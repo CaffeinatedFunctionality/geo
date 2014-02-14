@@ -1,6 +1,10 @@
 class ProfilesController < ApplicationController
 
+  before_filter :authenticate_user!, only: [:new, :create, :edit, :update]
 
+  def edit
+
+  end
 
   def show
     @user = Truckuser.find(params[:profile_id])
