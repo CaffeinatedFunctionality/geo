@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
 
   def configure_devise_params
     devise_parameter_sanitizer.for(:sign_up) {|u| u.permit(:email, :password, :password_confirmation, :remember_me)}
-    devise_parameter_sanitizer.for(:account_update) {|u| u.permit(:city, :email, :current_password, :password, :password_confirmation, :remember_me, :truckname, :state, :zipcode, :ownerfirstname, :ownerlastname, :address, :datetime, :category, :description, :profile_id, :avatar)}
+    devise_parameter_sanitizer.for(:account_update) {|u| u.permit(:city, :email, :current_password, :password, :password_confirmation, :remember_me, :truckname, :state, :zipcode, :ownerfirstname, :ownerlastname, :address, :datetime, :category, :description, :profile_id, :avatar, :latitude, :longitude)}
   end
 
   def create

@@ -1,8 +1,8 @@
 Foodtruckies2::Application.routes.draw do
   get "profiles/show"
-  devise_for :truckusers
+  devise_for :truckuser
 
-  devise_scope :truckusers do
+  devise_scope :truckuser do
     get '/register', to: 'devise/registrations#new', as: :register
     get '/login', to: 'devise/sessions#new', as: :login
     get '/logout', to: 'devise/sessions#destroy', as: :logout

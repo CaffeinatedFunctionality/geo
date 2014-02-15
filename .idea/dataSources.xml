@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="2216164904">
+  <component name="DataSourceManagerImpl" format="xml" hash="1502579720">
     <data-source source="LOCAL" name="Rails foodtruckies2: development" uuid="0f1628c9-036b-4d1c-8407-c71f4334bfa2">
       <driver-ref>sqlite.xerial</driver-ref>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
       <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/db/development.sqlite3</jdbc-url>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails foodtruckies2: production" uuid="9e332b01-e429-44e5-9427-4e627f1e8e1b">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql:db/production.postgres.ql</jdbc-url>
       <libraries />
     </data-source>
   </component>

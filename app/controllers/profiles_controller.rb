@@ -14,10 +14,18 @@ class ProfilesController < ApplicationController
     @address = Truckuser.find(params[:profile_id]).address
     @city = Truckuser.find(params[:profile_id]).city
     @state = Truckuser.find(params[:profile_id]).state
-    @zip = Truckuser.find(params[:profile_id]).zipcode
+    @zipcode = Truckuser.find(params[:profile_id]).zipcode
     @category = Truckuser.find(params[:profile_id]).category
     @description = Truckuser.find(params[:profile_id]).description
     @latitude = Truckuser.find(params[:profile_id]).latitude
     @longitude = Truckuser.find(params[:profile_id]).longitude
+    @full_address = Truckuser.find(params[:profile_id]).full_address
+
+    @hash = Gmaps4rails.build_markers(@user) do |truckuser, marker|
+      marker.lat truckuser.latitude
+      marker.lng truckuser.longitude
+    end
   end
+
+
 end

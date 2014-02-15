@@ -10,22 +10,23 @@
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
 
-  <div><%= f.label :truckname %><br />
+  <p>Update your Truck Name</p>
   <%= f.text_field :truckname, :autofocus => true %></div>
 
+  <p>Update Your Profile Picture</p>
   <%= f.file_field :avatar %>
 
-  <div><%= f.label :ownerfirstname %><br />
-  <%= f.text_field :ownerfirstname %> true %></div>
+  <p>Update the Owner Name</p>
+  <p>First Name</p>
+  <%= f.text_field :ownerfirstname %></div>
 
-  <div><%= f.label :ownerlastname %><br />
+  <p>Last Name</p>
   <%= f.text_field :ownerlastname %></div>
 
-  <div><%= f.label :description %><br />
+  <p>Update your Description</p>
   <%= f.text_area :description %></div>
 
   <p>Update your Food Category</p>
-  <div><%= f.label :category %><br />
   <%= f.text_field :category %></div>
 
   <p>Update Your Location</p>
@@ -46,12 +47,14 @@
   <div><%= f.label :datetime %><br />
   <%= f.datetime_select :datetime %></div>
 
+  <p>Update your Password</p>
   <div><%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
   <%= f.password_field :password, :autocomplete => "off" %></div>
 
   <div><%= f.label :password_confirmation %><br />
   <%= f.password_field :password_confirmation %></div>
 
+  <p>One last thing before you submit your changes</p>
   <div><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
   <%= f.password_field :current_password %></div>
 

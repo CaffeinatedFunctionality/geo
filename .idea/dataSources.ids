@@ -3,4 +3,7 @@
   <data-source source="LOCAL" name="Rails foodtruckies2: development" uuid="0f1628c9-036b-4d1c-8407-c71f4334bfa2">
     <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
   </data-source>
+  <data-source source="LOCAL" name="Rails foodtruckies2: production" uuid="9e332b01-e429-44e5-9427-4e627f1e8e1b">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
 </component>
