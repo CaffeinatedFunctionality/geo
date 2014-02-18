@@ -1,6 +1,6 @@
 class ProfilesController < ApplicationController
 
-  before_filter :authenticate_user!, only: [:new, :create, :edit, :update]
+  before_filter :authenticate_truckuser!, only: [:new, :create, :edit, :update]
 
   def edit
 

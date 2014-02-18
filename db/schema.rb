@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140214141909) do
+ActiveRecord::Schema.define(version: 20140218045009) do
+
+  create_table "locations", force: true do |t|
+    t.string   "address"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zipcode"
+    t.string   "latitude"
+    t.string   "longitude"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "truckusers", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -48,5 +59,16 @@ ActiveRecord::Schema.define(version: 20140214141909) do
 
   add_index "truckusers", ["email"], name: "index_truckusers_on_email", unique: true
   add_index "truckusers", ["reset_password_token"], name: "index_truckusers_on_reset_password_token", unique: true
+
+  create_table "users", force: true do |t|
+    t.string   "address"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zipcode"
+    t.string   "latitude"
+    t.string   "longitude"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

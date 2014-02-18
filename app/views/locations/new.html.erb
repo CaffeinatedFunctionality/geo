@@ -1,0 +1,137 @@
+<style>
+    #facebox {
+
+        /* overlay is hidden before loading */
+        display:none;
+
+        /* standard decorations */
+        width:400px;
+        border:10px solid #666;
+
+        /* for modern browsers use semi-transparent color on the border. nice! */
+        border:10px solid rgba(82, 82, 82, 0.698);
+
+        /* hot CSS3 features for mozilla and webkit-based browsers (rounded borders) */
+        -moz-border-radius:8px;
+        -webkit-border-radius:8px;
+    }
+
+    #facebox div {
+        padding:10px;
+        border:1px solid #3B5998;
+        background-color:#fff;
+        font-family:"lucida grande",tahoma,verdana,arial,sans-serif
+    }
+
+    #facebox h2 {
+        margin:-11px;
+        margin-bottom:0px;
+        color:#fff;
+        background-color:#6D84B4;
+        padding:5px 10px;
+        border:1px solid #3B5998;
+        font-size:20px;
+    }
+</style>
+<!--[if IE]>
+<style type="text/css">
+    .facebox {
+        background:transparent;
+        filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#333333,endColorstr=#333333);
+        zoom: 1;
+    }
+</style>
+<![endif]-->
+
+<div id="facebox">
+  <div>
+    <p>
+      Insert your Location
+    </p>
+    <%= form_for(@location) do |f| %>
+        <% if @location.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(@location.errors.count, "error") %> prohibited this location from being saved:</h2>
+
+              <ul>
+                <% @location.errors.full_messages.each do |msg| %>
+                    <li><%= msg %></li>
+                <% end %>
+              </ul>
+            </div>
+        <% end %>
+
+        <div class="field">
+          <%= f.label :address %><br>
+          <%= f.text_field :address %>
+        </div>
+        <div class="field">
+          <%= f.label :city %><br>
+          <%= f.text_field :city %>
+        </div>
+        <div class="field">
+          <%= f.label :state %><br>
+          <%= f.text_field :state %>
+        </div>
+        <div class="field">
+          <%= f.label :zipcode %><br>
+          <%= f.text_field :zipcode %>
+        </div>
+        <div class="field">
+          <%= f.label :latitude %><br>
+          <%= f.text_field :latitude %>
+        </div>
+        <div class="field">
+          <%= f.label :longitude %><br>
+          <%= f.text_field :longitude %>
+        </div>
+        <div class="actions">
+          <%= f.submit %>
+        </div>
+    <% end %>
+    <p style="color:#666">
+      To close, click the Close button or hit the ESC key.
+    </p>
+    <!-- yes/no buttons -->
+    <p>
+      <button class="close"> Close </button>
+    </p>
+  </div>
+</div>
+
+<script>
+    $(document).ready(function() {
+        $("#open_now").click(function() {
+            $("#facebox").overlay().load();
+        });
+
+        // select the overlay element - and "make it an overlay"
+        $("#facebox").overlay({
+
+            // custom top position
+            top: 260,
+
+            // some mask tweaks suitable for facebox-looking dialogs
+            mask: {
+
+                // you might also consider a "transparent" color for the mask
+                color: '#fff',
+
+                // load mask a little faster
+                loadSpeed: 200,
+
+                // very transparent
+                opacity: 0.5
+            },
+
+            // disable this for modal dialog-type of overlays
+            closeOnClick: false,
+
+            // load it immediately after the construction
+            load: true
+
+        });
+    });
+</script>
+
+<%= link_to 'Back', locations_path %>

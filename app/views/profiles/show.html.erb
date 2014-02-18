@@ -1,9 +1,11 @@
 <div class="page-header">
   <div class="row">
-    <div class="col-md-2">
-      <%= image_tag @user.avatar(:small)%>
+    <div class="small-3 columns">
+      <a class="th" href="">
+        <%= image_tag @user.avatar(:small)%>
+      </a>
     </div>
-    <div class="col-md-8">
+    <div class="small-9 columns">
       <div class="jumbotron">
         <h2><%= @truckname %></h2>
       </div>

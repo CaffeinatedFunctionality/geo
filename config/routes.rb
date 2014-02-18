@@ -1,4 +1,6 @@
 Foodtruckies2::Application.routes.draw do
+  resources :locations
+
   get "profiles/show"
   devise_for :truckuser
 
@@ -6,14 +8,15 @@ Foodtruckies2::Application.routes.draw do
     get '/register', to: 'devise/registrations#new', as: :register
     get '/login', to: 'devise/sessions#new', as: :login
     get '/logout', to: 'devise/sessions#destroy', as: :logout
+    get '/edit', to: 'devise/registrations#edit', as: :edit
   end
 
-  get '/:profile_id', to: 'profiles#show'
+  get '/:profile_id', to: 'profiles#show', as: :profile
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'welcome#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
